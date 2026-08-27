@@ -1,0 +1,50 @@
+[
+  {
+    "port": 38082,
+    "name": "Docker Port Hub",
+    "remark": "端口导航管理平台",
+    "category": "工具"
+  },
+  {
+    "port": 38160,
+    "name": "CI Service",
+    "remark": "持续集成示例",
+    "category": "开发工具"
+  },
+  {
+    "port": 38161,
+    "name": "Web Proxy",
+    "remark": "Web 代理示例",
+    "category": "Web"
+  },
+  {
+    "port": 38201,
+    "name": "Search Dashboard",
+    "remark": "搜索可视化示例",
+    "category": "运维"
+  },
+  {
+    "port": 38200,
+    "name": "Search Service",
+    "remark": "搜索服务示例",
+    "category": "数据库"
+  },
+  {
+    "port": 38190,
+    "name": "SQL Database",
+    "remark": "数据库示例",
+    "category": "数据库"
+  },
+  {
+    "port": 38192,
+    "name": "Cache Service",
+    "remark": "缓存服务示例",
+    "category": "数据库"
+  },
+  {
+    "port": 38250,
+    "name": "Container Console",
+    "remark": "容器管理示例",
+    "category": "运维"
+  }
+]

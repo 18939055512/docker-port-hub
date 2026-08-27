@@ -1,0 +1,13 @@
+server:
+  port: 38082
+
+port:
+  start: 38080
+  end: 38579
+  host: 127.0.0.1
+
+access:
+  prefix: http://192.0.2.10
+
+scan:
+  interval: 30

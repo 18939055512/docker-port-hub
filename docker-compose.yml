@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # 后端 API 服务
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: dph-backend
+    expose:
+      - "38082"
+    volumes:
+      # 配置文件挂载到容器（修改配置无需重新构建）
+      - ./config:/app/config
+      # Docker 套接字挂载（用于容器检测，只读）
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - CONFIG_DIR=/app/config
+      - FRONTEND_DIST=/app/static
+    restart: unless-stopped
+    networks:
+      - dph-network
+
+  # 前端 Nginx 服务（入口）
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: dph-frontend
+    ports:
+      - "38082:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - dph-network
+
+networks:
+  dph-network:
+    driver: bridge
