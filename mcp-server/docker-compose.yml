@@ -1,0 +1,14 @@
+services:
+  port-hub-mcp:
+    build: .
+    container_name: port-hub-mcp
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      MCP_TRANSPORT: streamable-http
+      MCP_HOST: 127.0.0.1
+      MCP_PORT: 38083
+      PORT_RANGE_START: 38080
+      PORT_RANGE_END: 38579
+    restart: unless-stopped
